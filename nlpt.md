@@ -5,8 +5,9 @@ kipngenokoech
 
 ## INTRODUCTION
 
-First before engaging in any machine learning task is to load the
-required libraries and files into the working environment.
+Natural language processing (NLP) is the ability of a computer program to understand human language as it is spoken and written.Madaraka day is the day Kenya achieved independent internal self-governance from the British colonists.We are going to analyse President Uhuru Kenyatta speeches from 2014-2020. 
+
+
 
 ``` r
 #loading libraries and files
@@ -103,8 +104,7 @@ inspect(dtm[1:5,1:6])
     ##   2019      8      3      4   1      2         7
     ##   2020      0      6      1   4      1         9
 
-## modelling and evaluation
-
+## MODELING AND EVALUATION
 ``` r
 freq<-colSums(as.matrix(dtm))
 #examing the head and the tail
