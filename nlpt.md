@@ -3,7 +3,7 @@ NATURAL LANGUAGE PROCESSING
 kipngenokoech
 7/11/2021
 
-## introduction
+## INTRODUCTION
 
 First before engaging in any machine learning task is to load the
 required libraries and files into the working environment.
