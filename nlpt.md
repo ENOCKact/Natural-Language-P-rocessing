@@ -122,8 +122,7 @@ freq[tail(ord)]
     ##  extens   moral  parent student     wit  worker 
     ##       3       3       3       3       3       3
 
-President Kenyatta frequently use the word `kenya` and
-`worker`,`wit`,`student`,`parent` being the least words used.
+President Kenyatta frequently used the word `kenya`.`worker`,`wit`,`student`,`parent` being the least words used.
 
 ``` r
 #identifying association of words using correlation
@@ -154,19 +153,18 @@ findAssocs(dtm,"economi",corlimit = 0.9)
     ##         money         avail        produc 
     ##          0.91          0.90          0.90
 
+
 `Better`,`fellow`,`infrastructure` have a correlation of `1` with the
 word `economi` ass shown above.
 
+### VISUAL PORTRAYAL
 ``` r
-#visual portrayal
-
 wordcloud(names(freq),freq,min.freq = 20,scale = c(3,.5),colors = brewer.pal(5,"Dark2"))
 ```
 
-![](nlpt_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> Word cloud is
-used to visualize the word frequencies.The size of each word depends on
-the frequency of occurrence in our document. `Kenyan` has the highest
-frequency.
+![](nlpt_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> 
+
+Word cloud is used to visualize the word frequencies.The size of each word depends on the frequency of occurrence in our document. `Kenyan` has the highest frequency compared to the rest of the words.
 
 ``` r
 #barpot
@@ -177,9 +175,9 @@ coul <- brewer.pal(5, "Set2")
 barplot(word_freq$freq,names=word_freq$word,col=coul,main = "Word frequency",xlab = "words",ylab = "counts",ylim = c(0,160))
 ```
 
-![](nlpt_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> The frequency
-of each word has been shown clearly by the bar graph ,`kenyan` having
-the highest frequency.
+![](nlpt_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> 
+
+The bar graph above clearly shows the frequency of each word ,`kenyan` having the highest frequency compared to the rest.
 
 ``` r
 #comapring 2014 and 2020 speeches
@@ -202,18 +200,18 @@ pol
     ##   year total.sentences total.words ave.polarity sd.polarity stan.mean.polarity
     ## 1 2014             142        2513        0.097       0.323              0.301
     ## 2 2020             329        3668        0.039       0.232              0.166
+    
 
-2020 speech appears to be the longest with `329` sentences and `3668`
-words.
+The year 2020 the speech was longer compared to previous years with `329` sentences and `3668` words.
 
 ``` r
 plot(pol)
 ```
 
-![](nlpt_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> 2014 speech
-had strong negative sentiments with standard polarity of `0.323`compared
-to 2020 with `0.232` standard mean polarity as shown by the polarity
-plot.
+![](nlpt_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> 
+
+On the year 2014 the speech had strong negative sentiments with standard polarity of `0.323`compared
+to 2020 with `0.232` standard mean polarity as shown by the polarity plot.
 
 ``` r
 #Dispersion plot of the following selected words(economi,fellow,billion,busi)
@@ -221,6 +219,7 @@ plot.
 dispersion_plot(sentences$speech,grouping.var=sentences$year,c("economi","fellow","billion","busi"),color="black",bg.color="white")
 ```
 
-![](nlpt_files/figure-gfm/unnamed-chunk-13-1.png)<!-- --> This is quite
-interesting as these topics were discussed early on in the 2014 speech
+![](nlpt_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+This is quite interesting as these topics were discussed early on in the 2014 speech
 but at the end in the 2020 speech.
