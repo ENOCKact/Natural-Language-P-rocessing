@@ -158,16 +158,21 @@ findAssocs(dtm,"economi",corlimit = 0.9)
 word `economi` ass shown above.
 
 ### VISUAL PORTRAYAL
+
+### Word cloud
+Word cloud is used to visualize the word frequencies.The size of each word depends on the frequency of occurrence in our document.
 ``` r
 wordcloud(names(freq),freq,min.freq = 20,scale = c(3,.5),colors = brewer.pal(5,"Dark2"))
 ```
 
 ![](nlpt_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> 
 
-Word cloud is used to visualize the word frequencies.The size of each word depends on the frequency of occurrence in our document. `Kenyan` has the highest frequency compared to the rest of the words.
+`Kenyan` has the highest frequency compared to the rest of the words.
 
+
+
+### barplot
 ``` r
-#barpot
 freq<-sort(colSums(as.matrix(dtm)),decreasing = TRUE)
 word_freq<-data.frame(word=names(freq),freq=freq)
 word_freq<-word_freq[1:10,]
